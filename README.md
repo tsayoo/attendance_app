@@ -1,16 +1,17 @@
 # attendance_app
 
-A new Flutter project.
+An attendance application that allows the user to make an attendance report and see the history using face detection
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+-attendance Report
+- Attendance History
+- Face Detector
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologies
+- Flutter framework
+- Realtime Database
+- Firebase Authentication
+- Face Detection
+- Dart version 3.6.1 (stable)
+- Flutter version 3.27.2
