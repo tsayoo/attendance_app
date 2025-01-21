@@ -1,3 +1,4 @@
+import 'package:attendance_app/ui/attend/attendance_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,7 +18,47 @@ class HomeScreen extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Container(),
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  child: Expanded(
+                    child: InkWell(
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      onTap: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => const AttendanceScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image(
+                            image: AssetImage('/assets/images/ic_absen.png'),
+                            height: 100,
+                            width: 100,
+                          ),
+                          SizedBox(height: 10,) ,
+                          Text(
+                            "Attendance Report",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 40)
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
