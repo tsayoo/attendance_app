@@ -59,8 +59,32 @@ Future<void>  submitAttendanceReport(BuildContext context, String address, Strin
               )
           ],
         ),
+        backgroundColor: Colors.blueAccent,
+        shape: StadiumBorder(), 
+        behavior: SnackBarBehavior.floating,
       ));
     }
+  }).catchError((error) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Row(
+        children: [
+          Icon(
+            Icons.error_outline,
+            color: Colors.white,
+          ),
+          SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              "Ups! $error",
+              style: TextStyle(color: Colors.white),
+            ),
+          )
+        ]
+      ),
+      backgroundColor: Colors.blueAccent,
+      shape: StadiumBorder(),
+      behavior: SnackBarBehavior.floating,
+      ));
   });
 }
 
@@ -70,7 +94,7 @@ void showLoaderDialog(BuildContext context) {
       children: <Widget>[
         CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-          // nampilin muter muter doang
+          // nampilin muter muter aj, bkn animasi lain
         ),
         Container(
           margin: EdgeInsets.only(left: 20),
