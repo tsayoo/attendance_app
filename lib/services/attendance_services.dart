@@ -85,6 +85,7 @@ Future<void>  submitAttendanceReport(BuildContext context, String address, Strin
       shape: StadiumBorder(),
       behavior: SnackBarBehavior.floating,
       ));
+      Navigator.of(context).pop();
   });
 }
 
