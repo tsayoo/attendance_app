@@ -1,7 +1,8 @@
+import 'package:attendance_app/services/attendance_services.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextEditingController controllerName, String address, String status, String timeStamp) {
+Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextEditingController controllerName, String address, String attendanceStatus, String timeStamp) {
   return Container(
     alignment: Alignment.center,
     margin: EdgeInsets.all(10),
@@ -23,11 +24,18 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
             borderRadius: BorderRadius.circular(20),
             onTap: () {
               if (image == null || controllerName.text.isEmpty /*|| address.isEmpty || status.isEmpty || timeStamp.isEmpty*/) {
-                showSnackBar;
+                showSnackBar(context, "Please fill all the forms!");
               } else {
-                
+                submitAttendanceReport(context, address, controllerName.text.toString(), attendanceStatus, timeStamp);
               }
             },
+            child: Text(
+              "Submit Now!",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+              )
+            ),
           ),
         ),
       ),
