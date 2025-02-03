@@ -22,4 +22,4 @@ class CameraControllerComponent {
     //klo aksi positif
       return CameraPreview(controller!);
     }
-}     
+}
