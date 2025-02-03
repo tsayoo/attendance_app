@@ -14,5 +14,7 @@ class FaceDetectorComponent {
   Future<void> detectFaces(XFile image) async {
     final inputImage = InputImage.fromFilePath(image.path);
     final faces = await faceDetector.processImage(inputImage);
+
+    // TODO : implement Face detection.
   }
 }
