@@ -1,4 +1,8 @@
 import 'package:attendance_app/ui/permission/components/app_bar.dart';
+import 'package:attendance_app/ui/permission/components/form_body.dart';
+import 'package:attendance_app/ui/permission/components/form_header.dart';
+import 'package:attendance_app/ui/permission/components/submit_button.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class PermissionScreen extends StatefulWidget {
@@ -26,9 +30,19 @@ class _PermissionScreenState extends State<PermissionScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // buat komponen UI utk form header
-              //buat komponen UI utk form body
-              // buat komponen UI utk submit button
+              FormHeader(
+                title: "Permission Request Form", 
+                icon: Icons.assignment
+                ),
+                FormBody(),
+                SubmitButton(
+                  size: size, 
+                  nameController: TextEditingController(), 
+                  formController: TextEditingController(), 
+                  toController: TextEditingController(), 
+                  dropValueCategories: "Dropdown Content", 
+                  dataCollection: FirebaseFirestore.instance.collection('dataCollectionValue'),
+              )
             ],
           )
         )
