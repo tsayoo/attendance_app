@@ -4,6 +4,7 @@ class DataServices {
   final CollectionReference dataCollection = FirebaseFirestore.instance.collection('attendance');
 
   Future<QuerySnapshot> getData() {
+    // utk dapet atau baca data dari database
     return dataCollection.get();
     //get = Read di CRUD
     // pengantar untuk get API dari luar
